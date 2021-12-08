@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
+# Game Rentals React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Game Rentals React is a rental webpage where your can add a each that you want to share with everyone.
+## :hammer: Preview
 
-## Available Scripts
+- Under construction
 
-In the project directory, you can run:
+## :hammer: Built With
 
-### `yarn start`
+- React
+- SCSS
+- Axios
+- Bootstrap
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To get a local copy up and running follow these simple steps:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting Started
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone it using git command:
+      ```ruby
+        git clone https://github.com/miguelesco/game-rentals-react.git
+      ```
 
-### `yarn build`
+**Run in development (locally)**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Install dependencies:
+      ```ruby
+        npm install
+      ```
+2. Run server
+      ```ruby
+        npm run start
+      ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## :blue_book: Learning Objectives
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Apply technical knowledge and skills gained in previous modules in a complex project.
+- Understand pros and cons of different approaches of connecting Ruby on Rails back-end with React front-end.
+- Understand principles of Ruby on Rails and React frameworks.
+- Apply Ruby best practices and language style guides in code.
+- Apply RoR best practices and language style guides in code (e.g. thin controllers).
+- Apply JavaScript best practices and language style guides in code.
+- Apply React best practices and language style guides in code.
+- Learn about and practice giving constructive feedback to teammates.
+- Perform a code review for a team member.
+- Use the "Review change"" feature from GitHub.
+- Write clear, professional, and respectful review comments for other team members.
+- Explain "why" a change is requested when giving a code review.
+- Plan a 2+ week project with no interim Microverse-set milestones and submit it on time.
+- Apply knowledge of setting working agreements to set group project teams up for success.
+- Independently implement best practices for group agreements to improve teamwork in larger group project.
+- Demonstrate ability to apply best practices of communication for resolving teamwork challenges.
+- Understand that respect is the foundation of strong relationship-building with teammates.
+- Show up throughout group projects as a reliable and committed team member who communicates and manages your time effectively.
+- Recognize the importance of investing in good working relationships with teammates.
+- Understand principles of strong teamwork (being reliable, committed, and consistent) and how to apply them in group projects.
+- Recognize the value of making equal contributions to group projects to produce the best outcome.
+- Use empty Kanban board to manage tasks with team and own time on the project.
 
-### `yarn eject`
+## Author
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+👤 **ArthurGC**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- GitHub: [@ArthurGC](https://github.com/ArthurGC)
+- Twitter: [@ArthurGC_22](https://twitter.com/ArthurGC_22)
+- LinkedIn: [alxguzmanc](https://www.linkedin.com/in/alxguzmanc/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+👤 **João Vítor Montanholi Nunes**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- GitHub: [jmontanholi](https://github.com/jmontanholi)
+- Twitter: [MontanholiNunes](https://twitter.com/MontanholiNunes)
+- LinkedIn: [Joao vitor montanholi](https://www.linkedin.com/in/joaovitormontanholi/)
 
-## Learn More
+👤 **Miguelangel E.**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- GitHub: [@miguelesco](https://github.com/miguelesco)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/miguelangel-escorche-delgado-9a2956163/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contributions, issues, and feature requests are welcome!
 
-### Analyzing the Bundle Size
+Feel free to check the [issues page](https://github.com/miguelesco/game-rentals-react/issues).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Show your support
 
-### Making a Progressive Web App
+Give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## :grey_exclamation: Acknowledgments
 
-### Advanced Configuration
+- [Microverse](https://www.microverse.org/)
+- [Design Guideline](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📝 License
 
-### Deployment
+This project is [MIT](LICENSE) licensed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
