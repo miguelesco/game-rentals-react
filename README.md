@@ -2,9 +2,6 @@
 # Game Rentals React
 
 Game Rentals React is a rental webpage where your can add a each that you want to share with everyone.
-## :hammer: Preview
-
-- Under construction
 
 ## :hammer: Built With
 
