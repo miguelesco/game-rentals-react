@@ -1,10 +1,12 @@
 import React from 'react';
+// import {useSelector} from 'react-redux'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Game from './Game';
 import { CustomLeftArrow, CustomRightArrow } from './util/CustomComponent';
 
 const CarouselContainer = () => {
+  // const GameList = useSelector(state => state.user.user_information.games)
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
