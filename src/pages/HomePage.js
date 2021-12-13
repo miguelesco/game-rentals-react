@@ -1,9 +1,9 @@
 import React from 'react';
+import CarouselContainer from '../components/CarouselContainer';
 
 const HomePage = () => (
-  <div>
-    <h1>LASTEST GAMES</h1>
-    <p>Please select a Game</p>
+  <div className="homePage">
+    <CarouselContainer />
   </div>
 );
 
