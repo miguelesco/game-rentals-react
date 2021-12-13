@@ -7,7 +7,6 @@ import SignIn from './components/Sign_in';
 
 function App() {
   const user = useSelector((state) => state.user.user_information);
-  console.log(user);
   return (
     <Routes>
       <Route path="sign_in" element={<SignIn />} />

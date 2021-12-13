@@ -1,7 +1,7 @@
- /* #98bf11 */
+/* #98bf11 */
 .section {
   height: 100vh;
-  background:url('../images/game_image.png'), #FFB400;
+  background: url('../images/game_image.png'), #ffb400;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -15,7 +15,7 @@
 
 .input {
   text-align: center;
-  border: 1px solid #97BF0F;
+  border: 1px solid #97bf0f;
   color: black;
   font-weight: bold;
   border-radius: 35px;
@@ -33,7 +33,7 @@
   height: 2rem;
   width: 35vw;
   border: 2px solid #81a10e;
-  background-color: #97BF0F;
+  background-color: #97bf0f;
 }
 
 .submit:hover {
