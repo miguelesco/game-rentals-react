@@ -4,6 +4,7 @@
   background: url('../images/game_image.png'), #ffb400;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 35vmax;
 }
 
 .form {
