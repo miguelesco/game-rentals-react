@@ -26,9 +26,11 @@ const dispatchGetUser = async (dispatch, username) => {
   dispatch({ type: GET_USER });
   const data = await getUser(username);
   if (data.error) {
-    return dispatch({ type: GET_USER_FAILURE, payload: data });
+    dispatch({ type: GET_USER_FAILURE, payload: data });
+    return data;
   }
-  return dispatch({ type: GET_USER_SUCCESS, payload: data });
+  dispatch({ type: GET_USER_SUCCESS, payload: data });
+  return data;
 };
 
 export default dispatchGetUser;
