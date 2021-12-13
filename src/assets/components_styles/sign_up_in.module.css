@@ -1,0 +1,53 @@
+ /* #98bf11 */
+.section {
+  height: 100vh;
+  background:url('../images/game_image.png'), #FFB400;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form {
+  margin-top: 20vh;
+  height: 35vh;
+  width: 75%;
+  background-color: #ffb300f3;
+}
+
+.input {
+  text-align: center;
+  border: 1px solid #97BF0F;
+  color: black;
+  font-weight: bold;
+  border-radius: 35px;
+  height: 2rem;
+  width: 40vw;
+}
+
+.input:focus {
+  outline: #81a10e 1px solid;
+}
+
+.submit {
+  color: white;
+  border-radius: 35px;
+  height: 2rem;
+  width: 35vw;
+  border: 2px solid #81a10e;
+  background-color: #97BF0F;
+}
+
+.submit:hover {
+  background-color: #81a10e;
+}
+
+.logo {
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 5rem;
+}
+
+.title {
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+}

@@ -24,6 +24,7 @@ function usersReducer(state = initialState, action) {
     case GET_USER:
       return { ...state, loading: true };
     case GET_USER_SUCCESS:
+      console.log(action.payload);
       return { ...state, loading: false, user_information: action.payload };
     case GET_USER_FAILURE:
       return { ...state, loading: false, errors: [...state.errors, ...action.payload.error] };

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import dispatchCreateUser from '../store/slices/create_user_slice';
 import style from '../assets/components_styles/sign_up_in.module.css';
+import dispatchGetUser from '../store/slices/get_user_slice';
 
-const SignUp = () => {
+const SignIn = () => {
   const [username, setUserName] = useState('');
   const [logged, setLogged] = useState(false);
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const SignUp = () => {
 
   // eslint-disable-next-line consistent-return
   const handleSubmit = async (name) => {
-    const data = await dispatchCreateUser(dispatch, name);
+    const data = await dispatchGetUser(dispatch, name);
     if (data.username) {
       setLogged(true);
     }
@@ -23,11 +23,11 @@ const SignUp = () => {
   return (
     <section className={`${style.section} d-flex flex-column align-items-center`}>
       <div>
-        <h1 className={`${style.logo}`}>Logo</h1>
+        <h1 className={style.logo}>Logo</h1>
       </div>
       <div className={`${style.form} d-flex flex-column justify-content-around align-items-center`}>
         <div>
-          <p className={style.title}>Sign Up</p>
+          <p className={style.title}>Sign In</p>
         </div>
         <div>
           <input
@@ -39,7 +39,7 @@ const SignUp = () => {
           />
         </div>
         <div>
-          <button className={`${style.submit}`} type="submit" onClick={() => { handleSubmit(username); }}>Create User</button>
+          <button className={`${style.submit}`} type="submit" onClick={() => { handleSubmit(username); }}>Log In</button>
         </div>
         { logged && <Navigate to="/" />}
       </div>
@@ -47,4 +47,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignIn;
