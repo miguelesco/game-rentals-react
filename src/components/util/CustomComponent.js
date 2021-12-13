@@ -1,5 +1,6 @@
 import { IoTriangleOutline } from 'react-icons/io5';
 import PropTypes from 'prop-types';
+import style from '../../assets/components_styles/homepage.module.css';
 
 const handleClick = (event) => {
   event.preventDefault();
@@ -7,12 +8,12 @@ const handleClick = (event) => {
 
 const CustomLeftArrow = ({ onClick }) => (
   <div className="left-container">
-    <IoTriangleOutline onClick={() => onClick()} onKeyDown={() => handleClick()} aria-hidden="true" className="custom-left-arrow" />
+    <IoTriangleOutline onClick={() => onClick()} onKeyDown={() => handleClick()} aria-hidden="true" className={style.custom_left_arrow} />
   </div>
 );
 const CustomRightArrow = ({ onClick }) => (
   <div className="right-container">
-    <IoTriangleOutline onClick={() => onClick()} onKeyDown={() => handleClick()} aria-hidden="true" className="custom-right-arrow" />
+    <IoTriangleOutline onClick={() => onClick()} onKeyDown={() => handleClick()} aria-hidden="true" className={style.custom_right_arrow} />
   </div>
 );
 

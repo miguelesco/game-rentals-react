@@ -1,8 +1,9 @@
 import React from 'react';
 import CarouselContainer from '../components/CarouselContainer';
+import style from '../assets/components_styles/homepage.module.css';
 
 const HomePage = () => (
-  <div className="homePage">
+  <div className={style.homePage}>
     <CarouselContainer />
   </div>
 );

@@ -4,6 +4,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Game from './Game';
 import { CustomLeftArrow, CustomRightArrow } from './util/CustomComponent';
+import style from '../assets/components_styles/homepage.module.css';
 
 const CarouselContainer = () => {
   // const GameList = useSelector(state => state.user.user_information.games)
@@ -55,7 +56,7 @@ const CarouselContainer = () => {
   ];
 
   return (
-    <div className="home">
+    <div className={style.home}>
       <h1 className="text-center">LASTEST GAMES</h1>
       <p className="text-center">Please select a Game</p>
 
@@ -67,7 +68,7 @@ const CarouselContainer = () => {
         draggable
         showDots
         ssr // means to render carousel on server-side.
-        infinite
+        infinite={false}
         autoPlaySpeed={1000}
         keyBoardControl
         minimumTouchDrag={50}
@@ -76,7 +77,7 @@ const CarouselContainer = () => {
         containerClass="carousel-container"
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
-        className="carousel"
+        className={style.carousel}
       >
         {
                 GameList.map((game) => (

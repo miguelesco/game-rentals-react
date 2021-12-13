@@ -1,0 +1,63 @@
+.homePage {
+  height: 100vh;
+  position: relative;
+}
+
+.home {
+  padding-top: 16vh;
+}
+
+.carousel {
+  margin-top: 5vh;
+}
+
+.game {
+  margin-bottom: 5vh;
+}
+
+.image_container {
+  width: calc(180px + 5vw);
+}
+
+.game_image {
+  width: 100%;
+  height: 100%;
+  user-drag: none; /* stylelint-disable-line */
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.title_game {
+  font-size: 1.5rem;
+}
+
+.custom_left_arrow {
+  color: white;
+  font-size: calc(3.5rem + 1vw);
+  padding-top: calc(1rem + 1vw);
+  padding-bottom: 1.5rem;
+  position: absolute;
+  background-color: #d8d6d6;
+  transform: rotate(-90deg);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  top: 40%;
+  left: 0;
+}
+
+.custom_right_arrow {
+  color: white;
+  font-size: calc(3.5rem + 1vw);
+  padding-top: calc(1rem + 1vw);
+  padding-bottom: 1.5rem;
+  position: absolute;
+  background-color: #98bf11;
+  transform: rotate(90deg);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  top: 40%;
+  right: 0;
+}
