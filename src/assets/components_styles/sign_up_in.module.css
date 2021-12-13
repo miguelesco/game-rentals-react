@@ -4,13 +4,15 @@
   background: url('../images/game_image.png'), #ffb400;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 35vmax;
 }
 
 .form {
   margin-top: 20vh;
   height: 35vh;
   width: 75%;
-  background-color: #ffb300f3;
+  background-color: #ffb300e7;
+  border-radius: 35px;
 }
 
 .input {
