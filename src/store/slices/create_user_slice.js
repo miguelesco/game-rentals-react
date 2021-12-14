@@ -22,14 +22,20 @@ const createUser = async (username) => {
   }
 };
 
-const dispatchCreateUser = async (dispatch, username) => {
+const saveUser = (userInformation) => {
+  const userInfoString = JSON.stringify(userInformation);
+  localStorage.setItem('userInfo', userInfoString);
+};
+
+const dispatchCreateUser = async (dispatch, user) => {
   dispatch({ type: CREATE_USER });
-  const data = await createUser(username);
+  const data = await createUser(user);
   if (data.error) {
     dispatch({ type: CREATE_USER_FAILURE, payload: data });
     return data;
   }
   dispatch({ type: CREATE_USER_SUCCESS, payload: data });
+  saveUser(data);
   return data;
 };
 

@@ -12,7 +12,6 @@ const SignIn = () => {
     setUserName(event.target.value);
   };
 
-  // eslint-disable-next-line consistent-return
   const handleSubmit = async (name) => {
     const data = await dispatchGetUser(dispatch, name);
     if (data.username) {

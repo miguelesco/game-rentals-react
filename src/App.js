@@ -7,6 +7,7 @@ import SignUp from './pages/Sign_up';
 import SignIn from './pages/Sign_in';
 import GameDetails from './pages/GameDetailsPage';
 import dispatchGetGames from './store/slices/get_games_slice';
+import ReservationPage from './pages/ReservationPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ function App() {
       <Route path="/sign_in" element={<SignIn />} />
       <Route path="/sign_up" element={<SignUp />} />
       <Route path="/games/:id" element={<GameDetails />} />
+      <Route path="/reservation/new" element={<ReservationPage />} />
       <Route path="/home" element={<HomePage />} />
     </Routes>
   );
