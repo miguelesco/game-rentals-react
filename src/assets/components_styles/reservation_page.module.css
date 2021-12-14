@@ -1,6 +1,6 @@
 .section {
   height: 100vh;
-  background-color: #5972069c;
+  background-color: #96bf0fec;
   text-align: center;
 }
 
@@ -18,7 +18,7 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.4;
+  opacity: 1;
 }
 
 .title {
@@ -47,9 +47,10 @@
 .input {
   border-radius: 30px;
   border: 3px solid #597206;
-  padding: 0;
+  padding: 0.2rem;
   margin: 0;
   text-align: center;
+  box-shadow: 2px 2px 2px black;
 }
 
 .input:focus {
@@ -62,6 +63,7 @@
 .location,
 .game {
   text-align: left;
+  color: white;
 }
 
 .location {
@@ -92,6 +94,8 @@
   width: 35vw;
   border: 1px solid #fff;
   background-color: #97bf0f;
+  margin-top: 1rem;
+  box-shadow: 2px 2px 15px black;
 }
 
 .submit:hover {

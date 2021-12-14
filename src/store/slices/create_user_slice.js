@@ -4,7 +4,7 @@ export const CREATE_USER_FAILURE = 'GAMES_RENTAL/SLICES/CREATE_USER_FAILURE';
 
 const createUser = async (username) => {
   try {
-    const response = await fetch('http://localhost:4000/api/sign_up', {
+    const response = await fetch('https://ancient-hollows-68035.herokuapp.com/api/sign_up', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

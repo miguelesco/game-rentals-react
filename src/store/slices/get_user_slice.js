@@ -1,12 +1,10 @@
-import saveUser from './create_user_slice';
-
 export const GET_USER = 'GAMES_RENTAL/SLICES/GET_USER';
 export const GET_USER_SUCCESS = 'GAMES_RENTAL/SLICES/GET_USER_SUCCESS';
 export const GET_USER_FAILURE = 'GAMES_RENTAL/SLICES/GET_USER_FAILURE';
 
 const getUser = async (username) => {
   try {
-    const response = await fetch('http://localhost:4000/api/sign_in', {
+    const response = await fetch('https://ancient-hollows-68035.herokuapp.com/api/sign_in', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -22,6 +20,11 @@ const getUser = async (username) => {
     }
     return error.response.data;
   }
+};
+
+const saveUser = (userInformation) => {
+  const userInfoString = JSON.stringify(userInformation);
+  localStorage.setItem('userInfo', userInfoString);
 };
 
 const dispatchGetUser = async (dispatch, username) => {

@@ -24,6 +24,7 @@ function App() {
       <Route path="/sign_in" element={<SignIn />} />
       <Route path="/sign_up" element={<SignUp />} />
       <Route path="/games/:id" element={<GameDetails />} />
+      <Route path="/games/:id/reservation" element={<ReservationPage />} />
       <Route path="/reservation/new" element={<ReservationPage />} />
       <Route path="/home" element={<HomePage />} />
     </Routes>

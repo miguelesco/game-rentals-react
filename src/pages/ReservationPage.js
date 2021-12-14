@@ -1,13 +1,16 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Navigate } from 'react-router';
+import { Navigate, useParams } from 'react-router';
 import dispatchCreateReservation from '../store/slices/create_reservation_slice';
 import style from '../assets/components_styles/reservation_page.module.css';
 import SelectGame from '../components/util/SelectGame';
 
-const ReservationPage = (gameId = 1) => {
+const ReservationPage = () => {
   const dispatch = useDispatch();
+  const { id } = useParams();
+  let gameId = 1;
+  if (id) { gameId = parseInt(id, 10); }
   const [error, setError] = useState(null);
   const [created, setCreated] = useState(false);
   const [info, setInfo] = useState({
@@ -63,6 +66,7 @@ const ReservationPage = (gameId = 1) => {
 
   return (
     <section className={`${style.section} d-flex flex-column justify-content-center align-items-center`}>
+      <h1 className="logo">Yoru&apos;s</h1>
       <h1 className={`${style.title}`}>Reserve a Game, Have Fun</h1>
       <p className={`${style.sub_title}`}>When reserving a game please pay attention to the date and the location</p>
       <div className={`${style.inner_div} d-flex flex-column justify-content-center align-items-center`}>
@@ -81,11 +85,13 @@ const ReservationPage = (gameId = 1) => {
           <p>Location</p>
           <input type="text" className={`${style.input}`} value={info.location} onChange={(e) => { handleChange(e, 'location'); }} />
         </div>
-        <div className={`${style.game} d-flex flex-column align-items-center`}>
-          <p>Select the Game</p>
-          <SelectGame handleChange={handleChange} />
-        </div>
-        <div className={`${style.submit}`}>
+        { !id && (
+          <div className={`${style.game} d-flex flex-column align-items-center`}>
+            <p>Select the Game</p>
+            <SelectGame handleChange={handleChange} />
+          </div>
+        )}
+        <div>
           <button type="submit" className={`${style.submit}`} onClick={() => { handleSubmit(info); }}>Reserve</button>
         </div>
       </div>

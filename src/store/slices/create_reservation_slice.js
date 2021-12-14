@@ -4,7 +4,7 @@ export const CREATE_RESERVATION_FAILURE = 'GAMES_RENTAL/SLICES/CREATE_RESERVATIO
 
 const createReservation = async (info) => {
   try {
-    const response = await fetch('http://localhost:4000/api/reservation/new', {
+    const response = await fetch('https://ancient-hollows-68035.herokuapp.com/api/reservation/new', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
