@@ -1,0 +1,24 @@
+.reservation_page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../images/background_reservations.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.reservation {
+  background-color: #98bf11;
+  border: 1px white solid;
+  color: white;
+}
+
+.reservation:nth-child(odd) {
+  background-color: #10bbb5;
+}
+
+.name {
+  font-size: calc(1rem + 0.4vw);
+  font-weight: bolder;
+}
