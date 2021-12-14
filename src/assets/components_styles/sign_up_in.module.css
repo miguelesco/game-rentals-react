@@ -1,17 +1,18 @@
 /* #98bf11 */
 .section {
   height: 100vh;
-  background: url('../images/game_image.png'), #ffb400;
-  background-repeat: no-repeat;
+  background: url('../images/background_image.png'), #ffb400;
+  background-repeat: repeat;
   background-position: center;
-  background-size: 35vmax;
+  background-blend-mode: luminosity;
+  background-size: contain;
 }
 
 .form {
   margin-top: 20vh;
   height: 35vh;
-  width: 75%;
-  background-color: #ffb300e7;
+  width: 70%;
+  background-color: #ffb300;
   border-radius: 35px;
 }
 
@@ -46,6 +47,10 @@
   color: white;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 5rem;
+  padding: 1rem;
+  box-shadow: 5px 5px 15px black;
+  background-color: rgba(0, 0, 0, 0.432);
+  border-radius: 35px;
 }
 
 .title {
