@@ -13,6 +13,7 @@
 
 .game {
   margin-bottom: 5vh;
+  text-decoration: none;
 }
 
 .image_container {
@@ -31,7 +32,17 @@
 }
 
 .title_game {
-  font-size: 1.5rem;
+  font-size: calc(1rem + 0.4vw);
+  color: #000;
+}
+
+.text_game {
+  font-size: calc(1rem + 0.2vw);
+  color: #000;
+}
+
+.text_home {
+  font-size: calc(1rem + 0.2vw);
 }
 
 .custom_left_arrow {
