@@ -1,10 +1,14 @@
 .homePage {
   height: 100vh;
+  width: 100%;
   position: relative;
+  display: grid;
+  grid-template-columns: [sidebar] 25% [content] 75%;
 }
 
 .home {
   padding-top: 16vh;
+  position: relative;
 }
 
 .carousel {
@@ -60,4 +64,7 @@
   border-bottom-right-radius: 2rem;
   top: 40%;
   right: 0;
+}
+.activeClicked {
+  background-color: #98bf11;
 }

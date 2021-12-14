@@ -26,9 +26,11 @@ const dispatchCreateUser = async (dispatch, username) => {
   dispatch({ type: CREATE_USER });
   const data = await createUser(username);
   if (data.error) {
-    return dispatch({ type: CREATE_USER_FAILURE, payload: data });
+    dispatch({ type: CREATE_USER_FAILURE, payload: data });
+    return data;
   }
-  return dispatch({ type: CREATE_USER_SUCCESS, payload: data });
+  dispatch({ type: CREATE_USER_SUCCESS, payload: data });
+  return data;
 };
 
 export default dispatchCreateUser;
