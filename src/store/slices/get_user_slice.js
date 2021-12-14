@@ -1,3 +1,5 @@
+import saveUser from './create_user_slice';
+
 export const GET_USER = 'GAMES_RENTAL/SLICES/GET_USER';
 export const GET_USER_SUCCESS = 'GAMES_RENTAL/SLICES/GET_USER_SUCCESS';
 export const GET_USER_FAILURE = 'GAMES_RENTAL/SLICES/GET_USER_FAILURE';
@@ -30,6 +32,7 @@ const dispatchGetUser = async (dispatch, username) => {
     return data;
   }
   dispatch({ type: GET_USER_SUCCESS, payload: data });
+  saveUser(data);
   return data;
 };
 
