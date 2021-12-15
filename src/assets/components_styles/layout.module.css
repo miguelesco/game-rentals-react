@@ -1,0 +1,14 @@
+.sidebar {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  grid-template-columns: [sidebar] 25% [content] 75%;
+}
+
+@media only screen and (min-width: 720px){
+  .sidebar {
+    display: grid;
+    height: 100vh;
+    background-color: aqua;
+  }
+}

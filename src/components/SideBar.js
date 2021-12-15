@@ -24,7 +24,7 @@ const SetActive = (item) => {
 };
 
 const SideBar = (props) => {
-  const { sidebarMobile, width } = props;
+  const { width } = props;
   const [hideSideBarContent, setHideSideBarContent] = useState(false);
   useEffect(() => {
     if (width < 720) {
@@ -34,7 +34,6 @@ const SideBar = (props) => {
 
   const hamburgerClick = () => {
     setHideSideBarContent(!hideSideBarContent);
-    sidebarMobile(hideSideBarContent);
   };
   return (
 
@@ -81,7 +80,6 @@ const SideBar = (props) => {
 };
 
 SideBar.propTypes = {
-  sidebarMobile: PropTypes.func.isRequired,
   width: PropTypes.number.isRequired,
 };
 
