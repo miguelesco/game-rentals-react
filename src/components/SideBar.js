@@ -6,7 +6,7 @@ import {
 import { Link, NavLink } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaPinterestP } from 'react-icons/fa';
 // import PropTypes from 'prop-types';
-import style from '../assets/components_styles/homepage.module.css';
+import '../assets/components_styles/sidebar.module.css';
 
 const actives = {
   home: false,
@@ -17,8 +17,6 @@ const SetActive = (item) => {
   const activeStyle = {
     backgroundColor: '#98bf11',
     color: '#333',
-    textDecoration: 'underline',
-    border: '#98bf11',
   };
   actives[item] = true;
   return actives[item] ? activeStyle : undefined;
@@ -32,7 +30,7 @@ const SideBar = () => (
       </CDBSidebarHeader>
       <CDBSidebarContent className="sidebar-content">
         <CDBSidebarMenu>
-          <CDBSidebarMenuItem icon="columns" active className={style.activeClicked}>
+          <CDBSidebarMenuItem icon="columns" active className={SetActive('home')}>
             <NavLink exact="true" to="/home" style={({ isActive }) => (isActive ? SetActive('home') : undefined)}>
               Juegos
             </NavLink>
