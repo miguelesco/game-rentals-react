@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+
 import CarouselContainer from '../components/CarouselContainer';
-import SideBar from '../components/SideBar';
+
 import style from '../assets/components_styles/homepage.module.css';
+
+import SideBar from '../components/SideBar';
 
 const HomePage = () => {
   const [sidebarOpenMobile, setSidebarOpenMobile] = useState(false);

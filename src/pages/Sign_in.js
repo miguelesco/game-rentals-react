@@ -12,7 +12,6 @@ const SignIn = () => {
     setUserName(event.target.value);
   };
 
-  // eslint-disable-next-line consistent-return
   const handleSubmit = async (name) => {
     const data = await dispatchGetUser(dispatch, name);
     if (data.username) {
@@ -23,7 +22,7 @@ const SignIn = () => {
   return (
     <section className={`${style.section} d-flex flex-column align-items-center`}>
       <div>
-        <h1 className={style.logo}>Logo</h1>
+        <h1 className="logo">Yoru&apos;s</h1>
       </div>
       <div className={`${style.form} d-flex flex-column justify-content-around align-items-center`}>
         <div>
