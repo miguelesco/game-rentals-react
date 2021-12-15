@@ -4,7 +4,7 @@ export const GET_GAMES_FAILURE = 'GAMES_RENTAL/SLICES/GET_GAMES_FAILURE';
 
 const getGames = async () => {
   try {
-    const response = await fetch('http://localhost:4000/api/games');
+    const response = await fetch('https://ancient-hollows-68035.herokuapp.com/api/games');
     const data = await response.json();
     return data;
   } catch (error) {
