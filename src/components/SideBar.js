@@ -21,7 +21,6 @@ const SetActive = (item) => {
     border: '#98bf11',
   };
   actives[item] = true;
-  console.log(style.activeClicked);
   return actives[item] ? activeStyle : undefined;
 };
 
