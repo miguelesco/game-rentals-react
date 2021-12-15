@@ -2,7 +2,6 @@
   width: 100%;
   height: 100vh;
   position: relative;
-  /* grid-template-columns: [sidebar] 25% [content] 75%; */
 }
 
 .home {
@@ -64,7 +63,7 @@
   right: 0;
 }
 
-@media only screen and (min-width: 720px){
+@media only screen and (min-width: 720px) {
   .home {
     padding-top: 16vh;
   }
