@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Routes, Route, Navigate } from 'react-router';
 import HomePage from './pages/HomePage';
+
 import SignUp from './pages/Sign_up';
 import SignIn from './pages/Sign_in';
 import GameDetails from './pages/GameDetailsPage';
@@ -15,6 +16,7 @@ function App() {
     dispatchGetGames(dispatch);
   }, []);
   const user = useSelector((state) => state.user.user_information);
+  console.log(user);
   return (
     <Routes>
       <Route
