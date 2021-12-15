@@ -10,17 +10,18 @@ const Layout = () => {
   useEffect(() => {
     window.addEventListener('resize', () => {
       setWidth(window.innerWidth);
-      if (width < 720) {
-        setSidebarOpenMobile(!sidebarOpenMobile);
-      }
     });
   }, []);
 
+  const sidebarMobile = (hide) => {
+    if (width < 720) {
+      setSidebarOpenMobile(hide);
+    }
+  };
+
   return (
-    <div className="d-flex position-relative">
-      <div className={`${style.sidebar} ${sidebarOpenMobile && width < 720 ? 'd-grid h-100' : ''}`}>
-        <SideBar />
-      </div>
+    <div className={`${style.sidebar} ${sidebarOpenMobile && width < 720 ? 'd-grid h-100' : ''}`}>
+      <SideBar width={width} sidebarMobile={sidebarMobile} />
       <Outlet />
     </div>
   );

@@ -1,6 +1,6 @@
 .sidebar {
   width: 100%;
-  height: 100vh;
+  display: block;
   position: relative;
   grid-template-columns: [sidebar] 25% [content] 75%;
 }
@@ -9,6 +9,5 @@
   .sidebar {
     display: grid;
     height: 100vh;
-    background-color: aqua;
   }
 }
