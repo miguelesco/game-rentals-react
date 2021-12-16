@@ -20,7 +20,7 @@ function App() {
     <Routes>
       <Route
         path="/"
-        element={(user === undefined ? <Navigate to="sign_up" /> : <Navigate to="/home" />)}
+        element={(user === null ? <Navigate to="sign_up" /> : <Navigate to="/home" />)}
       />
       <Route path="/sign_in" element={<SignIn />} />
       <Route path="/sign_up" element={<SignUp />} />
