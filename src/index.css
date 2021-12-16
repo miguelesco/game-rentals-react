@@ -13,9 +13,28 @@ body {
 
 .logo {
   font-family: 'Permanent Marker', cursive;
-  font-size: 18vw;
+  font-size: calc(100px + 1vw);
   background: radial-gradient(rgb(0, 119, 255), rgb(0, 9, 128));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   user-select: none;
+}
+
+.side_bar_logo {
+  font-family: 'Permanent Marker', cursive;
+  font-size: calc(50px + 1vw);
+  background: radial-gradient(rgb(0, 119, 255), rgb(0, 9, 128));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+  text-decoration: none;
+  margin-left: 15%;
+}
+
+.side_bar_logo:hover {
+  text-decoration: none;
+}
+
+.active {
+  color: white!important;
 }

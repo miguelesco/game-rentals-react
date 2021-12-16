@@ -13,8 +13,8 @@ const LogOutButton = () => {
 
   return (
     <div>
-      <button type="button" className={`${style.submit}`} onClick={() => { handleClick(); }}>
-        Log Out
+      <button type="button" className={`${style.logoutBtn}`} onClick={() => { handleClick(); }}>
+        LOGOUT
       </button>
       { loggedOut && <Navigate to="/" />}
     </div>

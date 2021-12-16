@@ -37,7 +37,7 @@
 .inner_div {
   background-color: #96bf0f48;
   width: 70%;
-  height: 35vh;
+  height: 35%;
   border-radius: 35px;
 }
 
@@ -78,8 +78,6 @@
 
 .game {
   width: 100%;
-  height: 2rem;
-  margin-bottom: 3rem;
 }
 
 .game select {
@@ -101,4 +99,20 @@
 
 .submit:hover {
   background-color: #81a10e;
+}
+
+.logoutBtn {
+  color: #97bf0f;
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  border: 2px solid transparent;
+  padding: 0.2rem;
+  transition: all 1.5s, color 1s;
+}
+
+.logoutBtn:hover {
+  color: #ff0000;
+  border: 2px solid red;
+  border-radius: 35px;
 }
