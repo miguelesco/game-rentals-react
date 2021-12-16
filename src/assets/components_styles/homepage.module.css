@@ -5,6 +5,7 @@
 }
 
 .home {
+  padding-top: 16vh;
   position: relative;
 }
 
@@ -63,8 +64,3 @@
   right: 0;
 }
 
-@media only screen and (min-width: 720px) {
-  .home {
-    padding-top: 16vh;
-  }
-}

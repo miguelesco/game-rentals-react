@@ -38,15 +38,20 @@ const SideBar = (props) => {
   };
   return (
 
-    <div style={{ display: 'flex', height: '100%', overflow: 'scroll initial' }}>
-      <CDBSidebar textColor="#333" backgroundColor="#fff">
-        <CDBSidebarHeader prefix={(
-          <Button
-            style={style}
-            className="fa fa-bars fa-large border-none bg-transparent shadow-none"
-            onClick={hamburgerClick}
-          />
-  )}
+    <div style={{
+      display: 'flex', height: '100%', overflow: 'scroll initial', position: 'absolute',
+    }}
+    >
+      <CDBSidebar textColor="#333" backgroundColor={width > 720 || !hideSideBarContent ? '#FFF' : 'transparent'}>
+        <CDBSidebarHeader
+          prefix={(
+            <Button
+              style={style}
+              className="fa fa-bars fa-large border-none bg-transparent shadow-none"
+              onClick={hamburgerClick}
+            />
+        )}
+          backgroundColor="#333"
         >
           <Link to="/home">Yorus Store</Link>
         </CDBSidebarHeader>
