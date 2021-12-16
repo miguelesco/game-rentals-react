@@ -63,7 +63,7 @@ const AddGame = () => {
         <div className="col-md-3">
           <input type="url" alt="image" placeholder="Image link" className="form-control" onChange={handleInputChange} name="icon" />
         </div>
-        <button type="submit" className="btn btn-primary">Enviar</button>
+        <button type="submit" className="btn btn-primary">Send</button>
       </form>
     </section>
   );
