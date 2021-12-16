@@ -40,7 +40,7 @@ const CarouselContainer = () => {
         draggable
         showDots
         ssr // means to render carousel on server-side.
-        infinite={false}
+        infinite
         autoPlaySpeed={1000}
         keyBoardControl
         minimumTouchDrag={50}
