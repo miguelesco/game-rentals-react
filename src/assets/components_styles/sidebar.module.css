@@ -1,0 +1,24 @@
+.active {
+  background-color: #97bf0f;
+}
+
+.active_link  {
+  color: white;
+}
+
+.link {
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+.link_div {
+  transition: all 0.5s;
+}
+
+.link_div:hover {
+  background-color: #97bf0f;
+}
+
+.link_div:hover a {
+  color: white;
+}

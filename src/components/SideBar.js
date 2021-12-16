@@ -4,24 +4,12 @@ import {
   CDBSidebarMenu, CDBSidebarMenuItem, CDBSidebarFooter,
   CDBBtn as Button,
 } from 'cdbreact';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaPinterestP } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import style from '../assets/components_styles/sidebar.styles';
-
-const actives = {
-  home: false,
-  reservations: false,
-};
-
-const SetActive = (item) => {
-  const activeStyle = {
-    backgroundColor: '#98bf11',
-    color: '#333',
-  };
-  actives[item] = true;
-  return actives[item] ? activeStyle : undefined;
-};
+import styleModule from '../assets/components_styles/sidebar.module.css';
+import Logout from './util/logout';
 
 const SideBar = (props) => {
   const { sidebarMobile, width } = props;
@@ -32,6 +20,21 @@ const SideBar = (props) => {
     }
   }, [width]);
 
+  const SetActiveStyle = (e) => {
+    setTimeout(() => {
+      const links = document.getElementsByClassName(styleModule.active);
+      for (let i = 0; i < links.length; i += 1) {
+        links[i].classList.remove(styleModule.active);
+      }
+      const targetParent = e.target.parentNode.parentNode;
+      const { target } = e;
+      if (target.classList.contains('active')) {
+        targetParent.classList.add(styleModule.active);
+        target.classList.add(styleModule.active_link);
+      }
+    }, 10);
+  };
+
   const hamburgerClick = () => {
     setHideSideBarContent(!hideSideBarContent);
     sidebarMobile(hideSideBarContent);
@@ -39,10 +42,10 @@ const SideBar = (props) => {
   return (
 
     <div style={{
-      display: 'flex', height: '100%', overflow: 'scroll initial', position: 'absolute',
+      display: 'flex', height: '100vh', overflow: 'hidden', position: 'absolute',
     }}
     >
-      <CDBSidebar textColor="#333" backgroundColor={width > 720 || !hideSideBarContent ? '#FFF' : 'transparent'}>
+      <CDBSidebar textColor="#333" backgroundColor={!hideSideBarContent ? '#FFF' : 'transparent'}>
         <CDBSidebarHeader
           prefix={(
             <Button
@@ -52,24 +55,43 @@ const SideBar = (props) => {
             />
         )}
           backgroundColor="#333"
-        >
-          <Link to="/home">Yorus Store</Link>
-        </CDBSidebarHeader>
-        <CDBSidebarContent className={hideSideBarContent && width < 720 ? 'd-none' : undefined}>
+        />
+        <h1 className={`side_bar_logo ${hideSideBarContent ? 'd-none' : undefined}`}>Yoru&apos;s</h1>
+        <CDBSidebarContent className={hideSideBarContent ? 'd-none' : undefined}>
           <CDBSidebarMenu>
-            <CDBSidebarMenuItem icon="columns" active className={SetActive('home')}>
-              <NavLink exact="true" to="/home" style={({ isActive }) => (isActive ? SetActive('home') : undefined)}>
-                Juegos
+            <CDBSidebarMenuItem icon="" className={styleModule.link_div}>
+              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/home" onClick={(e) => { SetActiveStyle(e); }}>
+                HOME
               </NavLink>
             </CDBSidebarMenuItem>
-            <NavLink exact="true" to="/" className="activeClicked">
-              <CDBSidebarMenuItem icon="columns">
-                Reservations
-              </CDBSidebarMenuItem>
-            </NavLink>
+            <CDBSidebarMenuItem icon="" className={styleModule.link_div}>
+              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/reservations" onClick={(e) => { SetActiveStyle(e); }}>
+                MY RESERVATIONS
+              </NavLink>
+            </CDBSidebarMenuItem>
+            <CDBSidebarMenuItem icon="" className={styleModule.link_div}>
+              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/reservation/new" onClick={(e) => { SetActiveStyle(e); }}>
+                NEW RESERVATION
+              </NavLink>
+            </CDBSidebarMenuItem>
+            <CDBSidebarMenuItem icon="" className={styleModule.link_div}>
+              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/games" onClick={(e) => { SetActiveStyle(e); }}>
+                MY GAMES
+              </NavLink>
+            </CDBSidebarMenuItem>
+            <CDBSidebarMenuItem icon="" className={styleModule.link_div}>
+              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/games/new" onClick={(e) => { SetActiveStyle(e); }}>
+                NEW GAME
+              </NavLink>
+            </CDBSidebarMenuItem>
+            <CDBSidebarMenuItem icon="">
+              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/games/new" onClick={(e) => { SetActiveStyle(e); }}>
+                <Logout />
+              </NavLink>
+            </CDBSidebarMenuItem>
           </CDBSidebarMenu>
         </CDBSidebarContent>
-        <CDBSidebarFooter style={{ textAlign: 'center' }} className={hideSideBarContent && width < 720 ? 'd-none' : undefined}>
+        <CDBSidebarFooter style={{ textAlign: 'center' }} className={hideSideBarContent ? 'd-none' : undefined}>
           <div className="sidebar-btn-wrapper" style={{ padding: '20px 5px' }}>
             <FaFacebookF />
             <FaTwitter />

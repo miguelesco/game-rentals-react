@@ -1,11 +1,14 @@
 .homePage {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   position: relative;
 }
 
 .home {
   padding-top: 16vh;
+  width: 100vw;
+  height: 100vh;
+  min-width: 320px;
   position: relative;
 }
 
