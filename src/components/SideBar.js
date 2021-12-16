@@ -14,26 +14,32 @@ import Logout from './util/logout';
 const SideBar = (props) => {
   const { sidebarMobile, width } = props;
   const [hideSideBarContent, setHideSideBarContent] = useState(false);
-  useEffect(() => {
-    if (width < 720) {
-      setHideSideBarContent(width < 720);
-    }
-  }, [width]);
-
+  const page = localStorage.getItem('activePage') || 'home';
+  const setPage = (param) => {
+    localStorage.setItem('activePage', param);
+  };
   const SetActiveStyle = (e) => {
     setTimeout(() => {
       const links = document.getElementsByClassName(styleModule.active);
       for (let i = 0; i < links.length; i += 1) {
         links[i].classList.remove(styleModule.active);
       }
-      const targetParent = e.target.parentNode.parentNode;
-      const { target } = e;
-      if (target.classList.contains('active')) {
+      const targetParent = e.parentNode.parentNode;
+      if (e.classList.contains('active')) {
         targetParent.classList.add(styleModule.active);
-        target.classList.add(styleModule.active_link);
+        e.classList.add(styleModule.active_link);
+        setPage(e.id);
       }
     }, 10);
   };
+
+  useEffect(() => {
+    if (width < 720) {
+      setHideSideBarContent(width < 720);
+    }
+    const activeLink = document.getElementById(page);
+    SetActiveStyle(activeLink);
+  }, [width]);
 
   const hamburgerClick = () => {
     setHideSideBarContent(!hideSideBarContent);
@@ -60,32 +66,32 @@ const SideBar = (props) => {
         <CDBSidebarContent className={hideSideBarContent ? 'd-none' : undefined}>
           <CDBSidebarMenu>
             <CDBSidebarMenuItem icon="" className={styleModule.link_div}>
-              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/home" onClick={(e) => { SetActiveStyle(e); }}>
+              <NavLink id="home" className={`ms-1 ${styleModule.link}`} exact="true" to="/home" onClick={(e) => { SetActiveStyle(e.target); }}>
                 HOME
               </NavLink>
             </CDBSidebarMenuItem>
             <CDBSidebarMenuItem icon="" className={styleModule.link_div}>
-              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/reservations" onClick={(e) => { SetActiveStyle(e); }}>
+              <NavLink id="my_reservations" className={`ms-1 ${styleModule.link}`} exact="true" to="/reservations" onClick={(e) => { SetActiveStyle(e.target); }}>
                 MY RESERVATIONS
               </NavLink>
             </CDBSidebarMenuItem>
             <CDBSidebarMenuItem icon="" className={styleModule.link_div}>
-              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/reservation/new" onClick={(e) => { SetActiveStyle(e); }}>
+              <NavLink id="new_reservations" className={`ms-1 ${styleModule.link}`} exact="true" to="/reservation/new" onClick={(e) => { SetActiveStyle(e.target); }}>
                 NEW RESERVATION
               </NavLink>
             </CDBSidebarMenuItem>
             <CDBSidebarMenuItem icon="" className={styleModule.link_div}>
-              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/games" onClick={(e) => { SetActiveStyle(e); }}>
+              <NavLink id="games" className={`ms-1 ${styleModule.link}`} exact="true" to="/games" onClick={(e) => { SetActiveStyle(e.target); }}>
                 MY GAMES
               </NavLink>
             </CDBSidebarMenuItem>
             <CDBSidebarMenuItem icon="" className={styleModule.link_div}>
-              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/games/new" onClick={(e) => { SetActiveStyle(e); }}>
+              <NavLink id="new_game" className={`ms-1 ${styleModule.link}`} exact="true" to="/games/new" onClick={(e) => { SetActiveStyle(e.target); }}>
                 NEW GAME
               </NavLink>
             </CDBSidebarMenuItem>
             <CDBSidebarMenuItem icon="">
-              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/games/new" onClick={(e) => { SetActiveStyle(e); }}>
+              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/games/new">
                 <Logout />
               </NavLink>
             </CDBSidebarMenuItem>
