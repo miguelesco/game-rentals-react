@@ -9,6 +9,7 @@ import dispatchGetGames from './store/slices/get_games_slice';
 import ReservationPage from './pages/ReservationPage';
 import Layout from './Layout';
 import HomePage from './pages/HomePage';
+import AddGame from './pages/AddGame';
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ function App() {
       <Route element={<Layout />}>
         <Route path="/games/:id" element={<GameDetails />} />
         <Route path="/games/:id/reservation" element={<ReservationPage />} />
+        <Route path="/games/add" element={<AddGame />} />
         <Route path="/reservation/new" element={<ReservationPage />} />
         <Route path="/home" element={<HomePage />} />
       </Route>
