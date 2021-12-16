@@ -42,7 +42,11 @@ const AddGame = () => {
 
   return (
     <section id="add-game" className={style.add_game}>
-      <h1>Add Game</h1>
+      <h1 className="title">Add a new Game to sell</h1>
+      <p>
+        In
+        <h1 className="logo">Yoru&apos;s</h1>
+      </p>
       <form className="column text-center" onSubmit={createGame}>
         <div className="col-md-3">
           <input type="text" placeholder="Title" className="form-control" onChange={handleInputChange} name="name" />
