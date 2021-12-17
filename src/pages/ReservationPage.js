@@ -59,6 +59,7 @@ const ReservationPage = () => {
   };
   const handleSubmit = async (info) => {
     const data = await dispatchCreateReservation(dispatch, info);
+    console.log(data);
     if (!data.error) {
       setCreated(true);
     }
