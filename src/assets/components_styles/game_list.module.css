@@ -27,7 +27,9 @@
   display: grid;
   gap: 5rem;
   grid-auto-flow: dense;
+  /* stylelint-disable */
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 500px), 1fr));
+  /* stylelint-enable */
   padding: 20px;
   z-index: 2;
 }
@@ -54,9 +56,9 @@
 }
 
 .card_body {
-  background-color: white; 
+  background-color: white;
   width: calc(100% - 50px);
-  text-align: left; 
+  text-align: left;
   position: absolute;
   bottom: 0;
 }
