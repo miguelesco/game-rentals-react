@@ -18,28 +18,30 @@ const GameDetails = () => {
         </div>
       )}
       { game && (
-        <div className={`${style.content_div} d-flex flex-column justify-content-center align-items-center flex-lg-row`}>
-          <div>
-            <img className={`${style.image}`} src={image} alt="game case" />
-          </div>
-          <div className={`${style.content_inner_div} text-lg-end`}>
-            <p className={`${style.title}`}>{game.name}</p>
-            <p className={style.category}>
-              <span>Game category:</span>
-              {game.category}
-            </p>
-            <p className={`${style.price}`}>
-              <span className={style.week}>Price per week:</span>
-              <span>$</span>
-              {game.price}
-            </p>
-            <p className={`${style.price}`}>
-              <span className={style.week}>Game price on store:</span>
-              <span>$</span>
-              {game.price * 20}
-            </p>
-            <p className={`${style.description}`}>{game.description}</p>
-            <Link className={style.reserve} to={`/reserve/${id}`}>Reserve this game</Link>
+        <div className={`${style.content_div} d-flex flex-column justify-content-center align-items-center`}>
+          <div className={`${style.content_inner_div} d-flex text-lg-end position-relative`}>
+            <div className={`${style.image_div} position-absolute top-0`}>
+              <img className={`${style.image}`} src={image} alt="game case" />
+            </div>
+            <div className={style.gameInfo_div}>
+              <p className={`${style.title}`}>{game.name}</p>
+              <p className={style.category}>
+                <span>Game category:</span>
+                {game.category}
+              </p>
+              <p className={`${style.price}`}>
+                <span className={style.week}>Price per week:</span>
+                <span>$</span>
+                {game.price}
+              </p>
+              <p className={`${style.price}`}>
+                <span className={style.week}>Game price on store:</span>
+                <span>$</span>
+                {game.price * 20}
+              </p>
+              <p className={`${style.description}`}>{game.description}</p>
+              <Link className={style.reserve} to={`/games/${id}/reservation`}>Reserve this game</Link>
+            </div>
           </div>
         </div>
       )}
