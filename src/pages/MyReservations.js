@@ -9,9 +9,10 @@ const MyReservations = () => {
   const [myReservations, setMyReservations] = useState([]);
   const [games, setGames] = useState([]);
   useEffect(() => {
-    setMyReservations(user.reservations);
-    setGames(state);
-    console.log(games, 'HOLAAA', state);
+    if (state.length > 0) {
+      setMyReservations(user.reservations);
+      setGames(state);
+    }
   }, [state]);
 
   return (
