@@ -28,6 +28,17 @@ const createReservation = async (info) => {
   }
 };
 
+const saveUserReservations = (reservation) => {
+  const user = JSON.parse(localStorage.getItem('userInfo'));
+  const modifiedUser = {
+    ...user,
+    reservations: [...user.reservations, reservation],
+  };
+  const userInfoString = JSON.stringify(modifiedUser);
+  localStorage.setItem('userInfo', userInfoString);
+  return modifiedUser;
+};
+
 const dispatchCreateReservation = async (dispatch, info) => {
   dispatch({ type: CREATE_RESERVATION });
   const data = await createReservation(info);
@@ -35,7 +46,8 @@ const dispatchCreateReservation = async (dispatch, info) => {
     dispatch({ type: CREATE_RESERVATION_FAILURE, payload: data });
     return data;
   }
-  dispatch({ type: CREATE_RESERVATION_SUCCESS, payload: data });
+  const user = saveUserReservations(data.reservation);
+  dispatch({ type: CREATE_RESERVATION_SUCCESS, payload: user.reservations });
   return data;
 };
 
