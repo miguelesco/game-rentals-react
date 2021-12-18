@@ -33,7 +33,7 @@ function App() {
         <Route path="/new_game" element={<AddGame />} />
         <Route path="/reservation/new" element={<ReservationPage />} />
         <Route path="/home" element={<HomePage />} />
-        <Route path="/games" element={<GamesList />} />
+        <Route path="/my_games" element={<GamesList />} />
         <Route path="/reservations" element={<MyReservations />} />
       </Route>
     </Routes>

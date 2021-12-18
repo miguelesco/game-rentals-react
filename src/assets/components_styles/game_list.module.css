@@ -6,7 +6,6 @@
   background-image: url('../images/background_games.webp');
   background-size: contain;
   padding-top: 16vh;
-  overflow: auto;
 }
 
 .game_list::before {
