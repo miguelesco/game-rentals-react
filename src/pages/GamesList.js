@@ -7,13 +7,16 @@ import gamePhoto from '../assets/images/game_image.png';
 import style from '../assets/components_styles/game_list.module.css';
 
 const GamesList = () => {
-  const state = useSelector((state) => state.games);
+  const state = useSelector((state) => state.games.games);
+  console.log(state, 'AAAHAHH');
   const user = JSON.parse(localStorage.getItem('userInfo'));
   const [games, setGames] = useState([]);
   useEffect(() => {
-    setGames(state.games.filter((game) => game.owner_id === user.id));
+    if (state.length > 0) {
+      setGames(state.filter((game) => game.owner_id === user.id));
+      console.log(games, state, 'TESSS');
+    }
   }, [state]);
-  console.log(games, state);
   return (
     <section className={style.game_list}>
       <h1 className={style.title}>MY GAMES</h1>
