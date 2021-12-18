@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Reservation from '../components/Reservation';
 import style from '../assets/components_styles/reservations_page.module.css';
 
 const MyReservations = () => {
-  const myReservations = useSelector((state) => state.user.user_information.reservations);
+  const state = useSelector((state) => state.user.user_information.reservations);
+  const [myReservations, setMyReservations] = useState([]);
+  useEffect(() => {
+    console.log(state);
+    setMyReservations(state);
+  }, [myReservations]);
 
   return (
     <div className={style.reservation_page}>
