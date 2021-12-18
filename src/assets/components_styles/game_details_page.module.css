@@ -8,7 +8,17 @@
 }
 
 .content_inner_div {
-  width: 100%;
+  width: 70%;
+  margin-left: 20vw;
+  height: 80vh;
+}
+
+.image_div {
+  right: 40%;
+}
+
+.gameInfo_div {
+  margin-top: 25vh;
 }
 
 .image {
@@ -30,7 +40,7 @@
 
 .description {
   width: 90vw;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .price {
@@ -55,16 +65,18 @@
   text-decoration: none;
   color: white;
   font-weight: bold;
+  transition: all 0.5s;
 }
 
 .reserve:hover {
   background-color: #81a10e;
   color: white;
+  text-decoration: none;
 }
 
 @media (min-width: 1023px) {
   .description {
-    width: 50vw;
+    width: 30vw;
   }
 
   .content_inner_div {

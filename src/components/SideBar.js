@@ -22,12 +22,13 @@ const SideBar = (props) => {
     setTimeout(() => {
       const links = document.getElementsByClassName(styleModule.active);
       for (let i = 0; i < links.length; i += 1) {
+        links[i].style.backgroundColor = '#fff';
         links[i].classList.remove(styleModule.active);
       }
       const targetParent = e.parentNode.parentNode;
       if (e.classList.contains('active')) {
         targetParent.classList.add(styleModule.active);
-        e.classList.add(styleModule.active_link);
+        targetParent.style.backgroundColor = '#97bf0f';
         setPage(e.id);
       }
     }, 10);
@@ -65,7 +66,7 @@ const SideBar = (props) => {
         <h1 className={`side_bar_logo ${hideSideBarContent ? 'd-none' : undefined}`}>Yoru&apos;s</h1>
         <CDBSidebarContent className={hideSideBarContent ? 'd-none' : undefined}>
           <CDBSidebarMenu>
-            <CDBSidebarMenuItem icon="" className={styleModule.link_div}>
+            <CDBSidebarMenuItem icon="" className={`${styleModule.link_div}`}>
               <NavLink id="home" className={`ms-1 ${styleModule.link}`} exact="true" to="/home" onClick={(e) => { SetActiveStyle(e.target); }}>
                 HOME
               </NavLink>
@@ -81,17 +82,17 @@ const SideBar = (props) => {
               </NavLink>
             </CDBSidebarMenuItem>
             <CDBSidebarMenuItem icon="" className={styleModule.link_div}>
-              <NavLink id="games" className={`ms-1 ${styleModule.link}`} exact="true" to="/games" onClick={(e) => { SetActiveStyle(e.target); }}>
+              <NavLink id="my_games" className={`ms-1 ${styleModule.link}`} exact="true" to="/my_games" onClick={(e) => { SetActiveStyle(e.target); }}>
                 MY GAMES
               </NavLink>
             </CDBSidebarMenuItem>
             <CDBSidebarMenuItem icon="" className={styleModule.link_div}>
-              <NavLink id="new_game" className={`ms-1 ${styleModule.link}`} exact="true" to="/games/new" onClick={(e) => { SetActiveStyle(e.target); }}>
+              <NavLink id="new_game" className={`ms-1 ${styleModule.link}`} exact="true" to="/new_game" onClick={(e) => { SetActiveStyle(e.target); }}>
                 NEW GAME
               </NavLink>
             </CDBSidebarMenuItem>
             <CDBSidebarMenuItem icon="">
-              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/games/new">
+              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/">
                 <Logout />
               </NavLink>
             </CDBSidebarMenuItem>

@@ -36,5 +36,6 @@ body {
 }
 
 .active {
-  color: white!important;
+  color: white !important;
+  padding-left: 2rem;
 }
