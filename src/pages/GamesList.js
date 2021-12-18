@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   CDBCard, CDBBtn, CDBCardBody, CDBContainer,
 } from 'cdbreact';
@@ -8,7 +8,12 @@ import style from '../assets/components_styles/game_list.module.css';
 
 const GamesList = () => {
   const state = useSelector((state) => state.games);
-  const [games] = useState(state.games);
+  const user = JSON.parse(localStorage.getItem('userInfo'));
+  const [games, setGames] = useState([]);
+  useEffect(() => {
+    setGames(state.games.filter((game) => game.owner_id === user.id));
+  }, [state]);
+  console.log(games, state);
   return (
     <section className={style.game_list}>
       <CDBContainer className={style.container}>
