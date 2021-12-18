@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  CDBCard, CDBCardBody, CDBContainer,
+  CDBCard, CDBBtn, CDBCardBody, CDBContainer,
 } from 'cdbreact';
 import { useSelector } from 'react-redux';
 import gamePhoto from '../assets/images/game_image.png';
@@ -29,6 +29,9 @@ const GamesList = () => {
                 <h1 style={{ color: '#333333' }} className="font-weight-normal">{game.name}</h1>
                 <p style={{ color: '#333333', fontSize: '0.9rem' }} className="font-weight-lighter">{game.category}</p>
                 <p style={{ color: '#333333' }} className="font-weight-light">{game.description}</p>
+                <CDBBtn color="dark" block>
+                  Delete Game
+                </CDBBtn>
               </CDBCardBody>
             </CDBCard>
           ))

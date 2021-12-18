@@ -9,7 +9,7 @@ const MyReservations = () => {
   useEffect(() => {
     console.log(state);
     setMyReservations(state);
-  }, [myReservations]);
+  }, [state]);
 
   return (
     <div className={style.reservation_page}>

@@ -12,13 +12,19 @@ import HomePage from './pages/HomePage';
 import MyReservations from './pages/MyReservations';
 import AddGame from './pages/AddGame';
 import GamesList from './pages/GamesList';
+import dispatchGetUser from './store/slices/get_user_slice';
 
 function App() {
   const dispatch = useDispatch();
+  const user = localStorage.getItem('userInfo');
   useEffect(() => {
     dispatchGetGames(dispatch);
   }, []);
-  const user = localStorage.getItem('userInfo');
+  useEffect(() => {
+    if (user) {
+      dispatchGetUser(dispatch, user.username);
+    }
+  }, [user]);
   return (
     <Routes>
       <Route

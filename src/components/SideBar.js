@@ -92,7 +92,7 @@ const SideBar = (props) => {
               </NavLink>
             </CDBSidebarMenuItem>
             <CDBSidebarMenuItem icon="">
-              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/">
+              <NavLink className={`ms-1 ${styleModule.link}`} exact="true" to="/sign_in">
                 <Logout />
               </NavLink>
             </CDBSidebarMenuItem>
