@@ -10,6 +10,10 @@ const setRender = () => {
 
 describe('Test Homepage component', () => {
   // Arrange
+  let component;
+  beforeEach(() => {
+    component = setRender();
+  });
   // Act
   // Assert
 });
