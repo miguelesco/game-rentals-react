@@ -16,7 +16,7 @@ const Game = ({ name, description, id }) => (
 
 Game.propTypes = {
   name: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
 };
 

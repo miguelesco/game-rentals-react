@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import dispatchCreateGame from '../store/slices/create_game_slice';
 import dispatchGetUser from '../store/slices/get_user_slice';
 import style from '../assets/components_styles/add_game.module.css';
 
 const AddGame = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState(JSON.parse(localStorage.getItem('userInfo')));
-  const [created, setCreated] = useState(false);
   const [game, setGame] = useState({
     name: '',
     description: '',
@@ -31,7 +31,6 @@ const AddGame = () => {
     if (!data.error) {
       const user = await dispatchGetUser(dispatch, userInfo.username);
       setUserInfo(user);
-      setCreated(true);
       window.alert('Game created successfully!');
       setGame({
         name: '',
@@ -41,6 +40,7 @@ const AddGame = () => {
         category: '',
         owner_id: user.id,
       });
+      navigate('/my_games');
     } else {
       window.alert('Error creating game');
     }
@@ -55,23 +55,22 @@ const AddGame = () => {
       </p>
       <form className="column text-center" onSubmit={createGame}>
         <div className="col-md-3">
-          <input type="text" placeholder="Title" className="form-control" onChange={handleInputChange} name="name" />
+          <input type="text" placeholder="Title" className="form-control" onChange={handleInputChange} value={game.name} name="name" />
         </div>
         <div className="col-md-3">
-          <input type="text" placeholder="Description" className="form-control" onChange={handleInputChange} name="description" />
+          <input type="text" placeholder="Description" className="form-control" onChange={handleInputChange} value={game.description} name="description" />
         </div>
         <div className="col-md-3">
-          <input type="number" placeholder="Price" className="form-control" onChange={handleInputChange} name="price" />
+          <input type="number" placeholder="Price" className="form-control" onChange={handleInputChange} value={game.price} name="price" />
         </div>
         <div className="col-md-3">
-          <input type="text" placeholder="Category" className="form-control" onChange={handleInputChange} name="category" />
+          <input type="text" placeholder="Category" className="form-control" onChange={handleInputChange} value={game.category} name="category" />
         </div>
         <div className="col-md-3">
-          <input type="url" alt="image" placeholder="Image link" className="form-control" onChange={handleInputChange} name="icon" />
+          <input type="url" alt="image" placeholder="Image link" className="form-control" onChange={handleInputChange} value={game.icon} name="icon" />
         </div>
         <button type="submit" className="btn btn-primary">Send</button>
       </form>
-      { created && <Navigate to="/my_games" />}
     </section>
   );
 };
