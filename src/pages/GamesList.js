@@ -37,7 +37,7 @@ const GamesList = () => {
           games.map((game) => (
             <CDBCard
               key={game.id}
-              className={[style.card, 'border-0']}
+              className={`${style.card} border-0`}
             >
               <img className="card-img-top" src={gamePhoto} alt="game" />
               <CDBCardBody className={style.card_body}>
