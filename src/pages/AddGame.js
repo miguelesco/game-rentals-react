@@ -49,25 +49,22 @@ const AddGame = () => {
   return (
     <section id="add-game" className={style.add_game}>
       <h1 className="title">Add a new Game to sell</h1>
-      <p>
-        In
-        <p className="logo">Yoru&apos;s</p>
-      </p>
+      <p className="logo">Yoru&apos;s</p>
       <form className="column text-center" onSubmit={createGame}>
         <div className="col-md-3">
-          <input type="text" placeholder="Title" className="form-control" onChange={handleInputChange} value={game.name} name="name" />
+          <input type="text" data-testid="title-input" placeholder="Title" className="form-control" onChange={handleInputChange} value={game.name} name="name" />
         </div>
         <div className="col-md-3">
-          <input type="text" placeholder="Description" className="form-control" onChange={handleInputChange} value={game.description} name="description" />
+          <input type="text" data-testid="description-input" placeholder="Description" className="form-control" onChange={handleInputChange} value={game.description} name="description" />
         </div>
         <div className="col-md-3">
-          <input type="number" placeholder="Price" className="form-control" onChange={handleInputChange} value={game.price} name="price" />
+          <input type="number" data-testid="price-input" placeholder="Price" className="form-control" onChange={handleInputChange} value={game.price} name="price" />
         </div>
         <div className="col-md-3">
-          <input type="text" placeholder="Category" className="form-control" onChange={handleInputChange} value={game.category} name="category" />
+          <input type="text" data-testid="category-input" placeholder="Category" className="form-control" onChange={handleInputChange} value={game.category} name="category" />
         </div>
         <div className="col-md-3">
-          <input type="url" alt="image" placeholder="Image link" className="form-control" onChange={handleInputChange} value={game.icon} name="icon" />
+          <input type="url" alt="image" data-testid="image-input" placeholder="Image link" className="form-control" onChange={handleInputChange} value={game.icon} name="icon" />
         </div>
         <button type="submit" className="btn btn-primary">Send</button>
       </form>
