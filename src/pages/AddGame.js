@@ -22,9 +22,9 @@ const AddGame = () => {
     });
   };
 
-  const createGame = (e) => {
+  const createGame = async (e) => {
     e.preventDefault();
-    const data = dispatchCreateGame(dispatch, game);
+    const data = await dispatchCreateGame(dispatch, game);
     if (!data.error) {
       window.alert('Game created successfully!');
       setGame({
@@ -49,19 +49,19 @@ const AddGame = () => {
       </p>
       <form className="column text-center" onSubmit={createGame}>
         <div className="col-md-3">
-          <input type="text" placeholder="Title" className="form-control" onChange={handleInputChange} name="name" />
+          <input type="text" placeholder="Title" className="form-control" onChange={handleInputChange} value={game.name} name="name" />
         </div>
         <div className="col-md-3">
-          <input type="text" placeholder="Description" className="form-control" onChange={handleInputChange} name="description" />
+          <input type="text" placeholder="Description" className="form-control" onChange={handleInputChange} value={game.description} name="description" />
         </div>
         <div className="col-md-3">
-          <input type="number" placeholder="Price" className="form-control" onChange={handleInputChange} name="price" />
+          <input type="number" placeholder="Price" className="form-control" onChange={handleInputChange} value={game.price} name="price" />
         </div>
         <div className="col-md-3">
-          <input type="text" placeholder="Category" className="form-control" onChange={handleInputChange} name="category" />
+          <input type="text" placeholder="Category" className="form-control" onChange={handleInputChange} value={game.category} name="category" />
         </div>
         <div className="col-md-3">
-          <input type="url" alt="image" placeholder="Image link" className="form-control" onChange={handleInputChange} name="icon" />
+          <input type="url" alt="image" placeholder="Image link" className="form-control" onChange={handleInputChange} value={game.icon} name="icon" />
         </div>
         <button type="submit" className="btn btn-primary">Send</button>
       </form>
