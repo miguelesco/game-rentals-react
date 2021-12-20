@@ -34,6 +34,7 @@ const SignIn = () => {
             type="text"
             value={username}
             placeholder="Username"
+            data-testid="username-input"
             onChange={(e) => { handleChange(e); }}
           />
         </div>
