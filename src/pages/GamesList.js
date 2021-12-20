@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {
   CDBCard, CDBBtn, CDBCardBody, CDBContainer,
 } from 'cdbreact';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import gamePhoto from '../assets/images/game_image.png';
 import dispatchDeleteGame from '../store/slices/delete_game_slice';
 import dispatchGetUser from '../store/slices/get_user_slice';
@@ -10,14 +10,13 @@ import style from '../assets/components_styles/game_list.module.css';
 
 const GamesList = () => {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state.games.games);
   const [userInfo, setUserInfo] = useState(JSON.parse(localStorage.getItem('userInfo')));
   const [games, setGames] = useState([]);
   useEffect(() => {
-    if (state.length > 0) {
-      setGames(state.filter((game) => game.owner_id === userInfo.id));
+    if (userInfo?.games.length > 0) {
+      setGames(userInfo.games);
     }
-  }, [state, userInfo]);
+  }, []);
 
   const deleteGame = async (gameId) => {
     const data = await dispatchDeleteGame(dispatch, gameId);
