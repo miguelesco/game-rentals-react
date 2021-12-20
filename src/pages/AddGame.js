@@ -51,7 +51,7 @@ const AddGame = () => {
       <h1 className="title">Add a new Game to sell</h1>
       <p>
         In
-        <h1 className="logo">Yoru&apos;s</h1>
+        <p className="logo">Yoru&apos;s</p>
       </p>
       <form className="column text-center" onSubmit={createGame}>
         <div className="col-md-3">
