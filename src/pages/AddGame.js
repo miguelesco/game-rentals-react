@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import dispatchCreateGame from '../store/slices/create_game_slice';
+import dispatchGetUser from '../store/slices/get_user_slice';
 import style from '../assets/components_styles/add_game.module.css';
 
 const AddGame = () => {
   const dispatch = useDispatch();
-  const user = JSON.parse(localStorage.getItem('userInfo'));
+  const [userInfo, setUserInfo] = useState(JSON.parse(localStorage.getItem('userInfo')));
+  const [created, setCreated] = useState(false);
   const [game, setGame] = useState({
     name: '',
     description: '',
     icon: '',
     price: 0,
     category: '',
-    owner_id: user.id,
+    owner_id: userInfo.id,
   });
 
   const handleInputChange = (event) => {
@@ -26,6 +29,9 @@ const AddGame = () => {
     e.preventDefault();
     const data = await dispatchCreateGame(dispatch, game);
     if (!data.error) {
+      const user = await dispatchGetUser(dispatch, userInfo.username);
+      setUserInfo(user);
+      setCreated(true);
       window.alert('Game created successfully!');
       setGame({
         name: '',
@@ -65,6 +71,7 @@ const AddGame = () => {
         </div>
         <button type="submit" className="btn btn-primary">Send</button>
       </form>
+      { created && <Navigate to="/my_games" />}
     </section>
   );
 };

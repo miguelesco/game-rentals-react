@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Navigate, useParams } from 'react-router';
 import dispatchCreateReservation from '../store/slices/create_reservation_slice';
+import dispatchGetUser from '../store/slices/get_user_slice';
 import style from '../assets/components_styles/reservation_page.module.css';
 import SelectGame from '../components/util/SelectGame';
 
@@ -13,6 +14,7 @@ const ReservationPage = () => {
   if (id) { gameId = parseInt(id, 10); }
   const [error, setError] = useState(null);
   const [created, setCreated] = useState(false);
+  const [userInfo, setUserInfo] = useState(JSON.parse(localStorage.getItem('userInfo')));
   const [info, setInfo] = useState({
     retrieval_date: '',
     reservation_date: '',
@@ -59,8 +61,9 @@ const ReservationPage = () => {
   };
   const handleSubmit = async (info) => {
     const data = await dispatchCreateReservation(dispatch, info);
-    console.log(data);
     if (!data.error) {
+      const user = await dispatchGetUser(dispatch, userInfo.username);
+      setUserInfo(user);
       setCreated(true);
     }
   };

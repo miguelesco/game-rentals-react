@@ -49,7 +49,7 @@ const SideBar = (props) => {
   return (
 
     <div style={{
-      display: 'flex', height: '100vh', overflow: 'hidden', position: 'absolute',
+      display: 'flex', height: '100vh', overflow: 'hidden', position: 'fixed',
     }}
     >
       <CDBSidebar textColor="#333" backgroundColor={!hideSideBarContent ? '#FFF' : 'transparent'}>

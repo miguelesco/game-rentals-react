@@ -21,7 +21,9 @@ const Layout = () => {
 
   return (
     <div className={`${style.sidebar} ${sidebarOpenMobile && width < 720 ? 'd-grid h-100' : ''}`}>
-      <SideBar width={width} sidebarMobile={sidebarMobile} />
+      <div className={style.z}>
+        <SideBar width={width} sidebarMobile={sidebarMobile} />
+      </div>
       <Outlet />
     </div>
   );

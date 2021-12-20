@@ -5,22 +5,25 @@ import {
 import { useSelector, useDispatch } from 'react-redux';
 import gamePhoto from '../assets/images/game_image.png';
 import dispatchDeleteGame from '../store/slices/delete_game_slice';
+import dispatchGetUser from '../store/slices/get_user_slice';
 import style from '../assets/components_styles/game_list.module.css';
 
 const GamesList = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.games.games);
-  const user = JSON.parse(localStorage.getItem('userInfo'));
+  const [userInfo, setUserInfo] = useState(JSON.parse(localStorage.getItem('userInfo')));
   const [games, setGames] = useState([]);
   useEffect(() => {
     if (state.length > 0) {
-      setGames(state.filter((game) => game.owner_id === user.id));
+      setGames(state.filter((game) => game.owner_id === userInfo.id));
     }
-  }, [state]);
+  }, [state, userInfo]);
 
-  const deleteGame = (gameId) => {
-    const data = dispatchDeleteGame(dispatch, gameId);
+  const deleteGame = async (gameId) => {
+    const data = await dispatchDeleteGame(dispatch, gameId);
     if (!data.error) {
+      const user = await dispatchGetUser(dispatch, userInfo.username);
+      setUserInfo(user);
       window.alert('Game deleted successfully!');
     } else {
       window.alert('Error deleting game');
