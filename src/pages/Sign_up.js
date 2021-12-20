@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import dispatchCreateUser from '../store/slices/create_user_slice';
 import style from '../assets/components_styles/sign_up_in.module.css';
 
 const SignUp = () => {
   const [username, setUserName] = useState('');
-  const [logged, setLogged] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleChange = (event) => {
     setUserName(event.target.value);
   };
@@ -15,7 +15,7 @@ const SignUp = () => {
   const handleSubmit = async (name) => {
     const data = await dispatchCreateUser(dispatch, name);
     if (data.username) {
-      setLogged(true);
+      navigate('/home');
     }
   };
 
@@ -40,7 +40,7 @@ const SignUp = () => {
         <div>
           <button className={`${style.submit}`} type="submit" onClick={() => { handleSubmit(username); }}>Create User</button>
         </div>
-        { logged && <Navigate to="/" />}
+        <NavLink to="/sign_in"> Logging </NavLink>
       </div>
     </section>
   );

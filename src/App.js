@@ -15,10 +15,10 @@ import GamesList from './pages/GamesList';
 
 function App() {
   const dispatch = useDispatch();
+  const user = localStorage.getItem('userInfo');
   useEffect(() => {
     dispatchGetGames(dispatch);
   }, []);
-  const user = localStorage.getItem('userInfo');
   return (
     <Routes>
       <Route
