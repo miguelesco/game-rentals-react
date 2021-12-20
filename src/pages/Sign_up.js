@@ -14,7 +14,6 @@ const SignUp = () => {
 
   const handleSubmit = async (name) => {
     const data = await dispatchCreateUser(dispatch, name);
-    console.log(data);
     if (data.username) {
       navigate('/home');
     }
