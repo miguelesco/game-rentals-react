@@ -7,8 +7,7 @@ const Reservation = ({
   game, dateReservation, dateRetrieval, city,
 }) => {
   const Game = useSelector((state) => state.games.games);
-  const GameOnly = Game[game].name;
-
+  const GameOnly = Game[game];
   return (
     <div className={`${style.reservation} p-4 col-12 col-sm-6 col-md-4 col-xl-3 text-center`}>
       <p className={style.name}>{GameOnly}</p>

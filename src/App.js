@@ -11,6 +11,7 @@ import Layout from './Layout';
 import HomePage from './pages/HomePage';
 import MyReservations from './pages/MyReservations';
 import AddGame from './pages/AddGame';
+import GamesList from './pages/GamesList';
 
 function App() {
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ function App() {
         <Route path="/new_game" element={<AddGame />} />
         <Route path="/reservation/new" element={<ReservationPage />} />
         <Route path="/home" element={<HomePage />} />
+        <Route path="/my_games" element={<GamesList />} />
         <Route path="/reservations" element={<MyReservations />} />
       </Route>
     </Routes>
