@@ -22,7 +22,7 @@ function App() {
   return (
     <Routes>
       <Route
-        path="/https://github.com/miguelesco/game-rentals-react"
+        path="/"
         element={(user === null ? <Navigate to="sign_in" /> : <Navigate to="/home" />)}
       />
       <Route path="/sign_in" element={<SignIn />} />
