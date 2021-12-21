@@ -24,8 +24,8 @@
 .form {
   margin-top: 20vh;
   height: 35vh;
-  width: 70%;
-  background-color: #ffb30073;
+  width: 300px;
+  background-color: #ffb300a6;
   border-radius: 35px;
 }
 
@@ -35,8 +35,8 @@
   color: black;
   font-weight: bold;
   border-radius: 35px;
-  height: 2rem;
-  width: 40vw;
+  padding: 0.2rem 0 0.2rem 0;
+  width: 200px;
 }
 
 .input:focus {
@@ -47,7 +47,7 @@
   color: white;
   border-radius: 35px;
   height: 2rem;
-  width: 35vw;
+  width: 200px;
   border: 2px solid #81a10e;
   background-color: #97bf0f;
 }
