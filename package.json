@@ -1,6 +1,6 @@
 {
   "name": "game-rentals-react",
-  "homepage": "http://miguelesco.github.io/game-rentals-react",
+  "homepage": "https://miguelesco.github.io/game-rentals-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -34,6 +34,11 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -55,6 +60,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/plugin-syntax-jsx": "^7.16.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.5",
     "@babel/preset-react": "^7.16.0",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.25.3",

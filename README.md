@@ -10,6 +10,9 @@ Game Rentals React is a rental webpage where your can add a each that you want t
 - Axios
 - Bootstrap
 
+## Live Project [link](https://gamerentalsreact.herokuapp.com/home)
+
+
 To get a local copy up and running follow these simple steps:
 
 ## Getting Started

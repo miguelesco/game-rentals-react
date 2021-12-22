@@ -87,7 +87,7 @@ const ReservationPage = () => {
         </div>
         <div className={`${style.location} d-flex flex-column align-items-center`}>
           <p>Location</p>
-          <input type="text" className={`${style.input}`} value={info.location} onChange={(e) => { handleChange(e, 'location'); }} />
+          <input type="text" className={`${style.input}`} value={info.location} data-testid="location-input" onChange={(e) => { handleChange(e, 'location'); }} />
         </div>
         { !id && (
           <div className={`${style.game} d-flex flex-column align-items-center`}>
