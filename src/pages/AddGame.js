@@ -9,6 +9,7 @@ const AddGame = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState(JSON.parse(localStorage.getItem('userInfo')));
+  const [message, setMessage] = useState('');
   const [game, setGame] = useState({
     name: '',
     description: '',
@@ -31,7 +32,7 @@ const AddGame = () => {
     if (!data.error) {
       const user = await dispatchGetUser(dispatch, userInfo.username);
       setUserInfo(user);
-      window.alert('Game created successfully!');
+      setMessage('Game created successfully!');
       setGame({
         name: '',
         description: '',
@@ -40,37 +41,52 @@ const AddGame = () => {
         category: '',
         owner_id: user.id,
       });
+    } else {
+      setMessage('Error creating game');
+    }
+  };
+
+  const confirm = () => {
+    if (message === 'Game created successfully!') {
       navigate('/my_games');
     } else {
-      window.alert('Error creating game');
+      setMessage('');
     }
   };
 
   return (
     <section id="add-game" className={style.add_game}>
-      <h1 className="title">Add a new Game to sell</h1>
-      <p>
-        In
-        <p className="logo">Yoru&apos;s</p>
-      </p>
-      <form className="column text-center" onSubmit={createGame}>
-        <div className="col-md-3">
-          <input type="text" placeholder="Title" className="form-control" onChange={handleInputChange} value={game.name} name="name" />
+      <div className={`${message === '' ? 'd-none' : 'd-block'} ${style.modal_outside}`}>
+        <div className={`position-absolute ${style.modal_inner}`}>
+          <p className={`${style.message}`}>{message}</p>
+          <button className={`${style.confirm}`} type="button" onClick={() => { confirm(); }}>Confirm</button>
         </div>
-        <div className="col-md-3">
-          <input type="text" placeholder="Description" className="form-control" onChange={handleInputChange} value={game.description} name="description" />
-        </div>
-        <div className="col-md-3">
-          <input type="number" placeholder="Price" className="form-control" onChange={handleInputChange} value={game.price} name="price" />
-        </div>
-        <div className="col-md-3">
-          <input type="text" placeholder="Category" className="form-control" onChange={handleInputChange} value={game.category} name="category" />
-        </div>
-        <div className="col-md-3">
-          <input type="url" alt="image" placeholder="Image link" className="form-control" onChange={handleInputChange} value={game.icon} name="icon" />
-        </div>
-        <button type="submit" className="btn btn-primary">Send</button>
-      </form>
+      </div>
+      <div className={`${style.padding}`}>
+        <h1 className="title">Add a new Game to sell</h1>
+        <p>
+          In
+          <p className="logo">Yoru&apos;s</p>
+        </p>
+        <form className="column text-center" onSubmit={createGame}>
+          <div className="col-md-3">
+            <input type="text" placeholder="Title" className="form-control" onChange={handleInputChange} value={game.name} name="name" />
+          </div>
+          <div className="col-md-3">
+            <input type="text" placeholder="Description" className="form-control" onChange={handleInputChange} value={game.description} name="description" />
+          </div>
+          <div className="col-md-3">
+            <input type="number" placeholder="Price" className="form-control" onChange={handleInputChange} value={game.price} name="price" />
+          </div>
+          <div className="col-md-3">
+            <input type="text" placeholder="Category" className="form-control" onChange={handleInputChange} value={game.category} name="category" />
+          </div>
+          <div className="col-md-3">
+            <input type="url" alt="image" placeholder="Image link" className="form-control" onChange={handleInputChange} value={game.icon} name="icon" />
+          </div>
+          <button type="submit" className="btn btn-primary">Send</button>
+        </form>
+      </div>
     </section>
   );
 };

@@ -5,7 +5,6 @@
   background-color: rgba(119, 242, 242, 0.618);
   background-image: url('../images/background_games.webp');
   background-size: contain;
-  padding-top: 16vh;
 }
 
 .game_list::before {

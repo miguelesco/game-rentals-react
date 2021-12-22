@@ -4,6 +4,9 @@
   width: 100vw;
   background-color: rgba(255, 166, 0, 0.782);
   text-align: center;
+}
+
+.padding {
   padding-top: 16vh;
 }
 
@@ -39,4 +42,39 @@ input {
   margin: 15px 0;
   text-align: center;
   padding: 25px;
+}
+
+.modal_outside {
+  background-color: rgba(0, 0, 0, 0.534);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding-top: 16vh;
+  z-index: 10;
+}
+
+.modal_inner {
+  padding: 2rem;
+  width: 200px;
+  height: 200px;
+  background-color: rgb(238, 238, 238);
+  border: 1px solid rgba(255, 166, 0, 1);
+  border-radius: 35px;
+  margin: auto;
+  left: 42%;
+}
+
+.message {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.confirm {
+  padding: 0.5rem;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  margin-top: 2rem;
 }
