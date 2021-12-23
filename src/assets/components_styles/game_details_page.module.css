@@ -1,0 +1,88 @@
+.section {
+  height: 100vh;
+}
+
+.content_div {
+  margin: 5vh 0 0 3vw;
+  width: 100%;
+}
+
+.content_inner_div {
+  width: 70%;
+  margin-left: 20vw;
+  height: 80vh;
+}
+
+.image_div {
+  right: 40%;
+}
+
+.gameInfo_div {
+  margin-top: 25vh;
+}
+
+.image {
+  width: 30vh;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.category {
+  font-weight: 500;
+}
+
+.category span {
+  margin: 0.1rem;
+}
+
+.description {
+  width: 90vw;
+  font-size: 1.5rem;
+}
+
+.price {
+  font-weight: bold;
+  color: #97bf0f;
+}
+
+.price span {
+  margin: 0.1rem;
+}
+
+.week {
+  font-weight: 500;
+  color: black;
+}
+
+.reserve {
+  background-color: #97bf0f;
+  padding: 0.3rem;
+  border: 2px solid #81a10e;
+  border-radius: 35px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+.reserve:hover {
+  background-color: #81a10e;
+  color: white;
+  text-decoration: none;
+}
+
+@media (min-width: 1023px) {
+  .description {
+    width: 30vw;
+  }
+
+  .content_inner_div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10vw;
+  }
+}

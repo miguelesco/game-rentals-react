@@ -1,0 +1,17 @@
+.sidebar {
+  width: 100%;
+  display: block;
+  position: relative;
+  grid-template-columns: [sidebar] auto [content] auto;
+}
+
+.z {
+  z-index: 10;
+}
+
+@media only screen and (min-width: 720px) {
+  .sidebar {
+    display: grid;
+    height: 100vh;
+  }
+}

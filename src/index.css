@@ -1,27 +1,41 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+/* Styles */
+* {
   margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+body {
+  width: 100%;
+}
+
+.logo {
+  font-family: 'Permanent Marker', cursive;
+  font-size: calc(100px + 1vw);
+  background: radial-gradient(rgb(0, 119, 255), rgb(0, 9, 128));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+}
+
+.side_bar_logo {
+  font-family: 'Permanent Marker', cursive;
+  font-size: calc(50px + 1vw);
+  background: radial-gradient(rgb(0, 119, 255), rgb(0, 9, 128));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+  text-decoration: none;
+  margin-left: 15%;
+}
+
+.side_bar_logo:hover {
+  text-decoration: none;
+}
+
+.active {
+  color: white !important;
+  padding-left: 2rem;
 }

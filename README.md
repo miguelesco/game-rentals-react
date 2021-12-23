@@ -2,9 +2,6 @@
 # Game Rentals React
 
 Game Rentals React is a rental webpage where your can add a each that you want to share with everyone.
-## :hammer: Preview
-
-- Under construction
 
 ## :hammer: Built With
 
@@ -12,6 +9,9 @@ Game Rentals React is a rental webpage where your can add a each that you want t
 - SCSS
 - Axios
 - Bootstrap
+
+## Live Project [link](https://gamerentalsreact.herokuapp.com/home)
+
 
 To get a local copy up and running follow these simple steps:
 
@@ -34,6 +34,10 @@ To get a local copy up and running follow these simple steps:
         npm run start
       ```
 
+## Kanban board
+[Kanban Board Link](https://github.com/miguelesco/games-rental-rails/projects/1)
+![Kanban Board](https://user-images.githubusercontent.com/73256642/145242439-5ebdf98d-67e0-48d5-8817-03a8a5f406e3.png)
+Number of students: 3
 ## :blue_book: Learning Objectives
 
 - Apply technical knowledge and skills gained in previous modules in a complex project.
